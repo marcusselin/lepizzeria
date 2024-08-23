@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>LePizzeria</title>
+    <link rel="stylesheet" type="text/css" href="css_main/theme.css"> 
+    <link rel="stylesheet" type="text/css" href="./icons/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css_main/cart.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body class="orange-bg">
+    <div class="row">
+      <div class="leftCorner">
+      </div>
+      
+      <div class="topbar"> </div>
+      <div class="topbarline"> </div>
+
+      <!-- KOTI NAPPI--> 
+      <a href="index.html">
+        <img src="img/LePizzeriaJPG_2.jpg" class="HomeButton"> 
+      </a>
+
+      <!-- MENU NAPPI-->
+      <a href="menu.html">
+        <p class="MenuButton">MENU</p> 
+      </a>
+
+      <!-- LUO OMA PIZZASI NAPPI-->
+      <a href="create_pizza.html">
+        <p class="CreateButton">LUO OMA PIZZASI</p> 
+      </a>
+
+      <!--OSTOSKORI-->
+        <div>
+          <p id="amount_text" class="CartNum" style="color: white;"></p>
+          <a href="ostoskori.html">
+            <img src="img/Cart.png" class="CartButton">
+          </a>
+        </div>
+
+      <!--KIRJAUTUMINEN-->
+      <div id="logged_in_page" class="row_right">
+        <p id="username-text">null</p>
+        <p id="log-out-button" onClick='HandleEvent("log_out")' style="font-size: 16px;">Kirjaudu ulos</p>
+      </div>
+      
+      <div id="log_in_link" class="row_right">
+        <p style="background-color: #020122;"></p>     
+        <a href="log_in.html">
+          <img src="img/user-account-icon.jpg" width="182" height="50">
+        </a>
+      </div>
+    </div>
+    
+    <section class="center" style="background-color: #874631;">
+      <div class="box">
+        <h1 class="big">&nbsp;Ostoskori</h1>
+        <p class="smaller-text" id="ostoskori_text" style="display: none;"></p>
+        <div id="order_final" style="background-color: #874631;">
+            <section style="position: relative; left: 21%;">
+              <ul id="cart_list" style="background-color: wheat; width: 55%;"></ul>
+            </section>
+            <p class="normal-text">Toimitustapa</p>
+            <input type="radio" id="Nouto" value="Nouto" name="delivery" onchange="HandleEvent('HideDelivery')" checked>
+            <label for="Nouto">Nouto</label>
+            <br>
+            <input type="radio" id="Kuljetus" value="Kuljetus" name="delivery" onchange="HandleEvent('ShowDelivery')">
+            <label for="Kuljetus">Kuljetus (+5€)</label>
+            <br>
+            <br>
+            <input class="center" id="deliveryDiv" type="text" value="" placeholder="Syötä osoitteesi" style="display: none;">
+            <p class="smaller-text" id="total_final"></p>
+            <p class="smaller-text" id="total_amount"></p>
+            <p class="smaller-text" id="delivery-time"></p>
+            <button onclick="Order_Final()">Tilaa nyt</button>
+            <br>
+            <br>
+        </div>
+      </div>
+    </section>
+
+    <div id="loader" class="loader" style="display: none;"></div>
+
+    <section class="center" id="success_text" style="background-color: #874631; display: none;">
+      <div>
+        <p class="smaller-text">Tilaus onnistui!</p>
+        <button class="button_link" onclick="window-location.replace('index.html')">Palaa takaisin</button>
+      </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section class="feedback-section">
+      <div class="text-container1">
+        <br>
+        <br>
+        <br>
+        <p style="color:white" class="normal"> Sähköpostiosoite: lepizzeria@gmail.com</p> 
+        <p style="color:white" class="normal"> Puh. +358 1234 567 890</p> 
+        <p style="color:white" class="normal"> © Copyright LePizzeria oy</p> 
+      </div>
+      <div class="text-container2">
+        <h1></h1>
+        <h1 class="normal-text" style="color:white" class="normal">Palaute</h1>
+        <form class="feedback" onsubmit="sendfeedback()">
+          <div class="rating">
+            <input type="radio" id="1" name="rating" value="1" onchange="handleRatingChange(1)" checked>
+            <label for="1" title="1 star" class="normal"></label>
+            &nbsp;
+            <input type="radio" id="2" name="rating" value="2" onchange="handleRatingChange(2)">
+            <label for="2" title="2 star" class="normal"></label>
+            &nbsp;
+            <input type="radio" id="3" name="rating" value="3" onchange="handleRatingChange(3)">
+            <label for="3" title="3 star" class="normal"></label>
+            &nbsp;
+            <input type="radio" id="4" name="rating" value="4" onchange="handleRatingChange(4)">
+            <label for="4" title="4 star" class="normal"></label>
+            &nbsp;
+            <input type="radio" id="5" name="rating" value="5" onchange="handleRatingChange(5)">
+            <label for="5" title="5 star" class="normal"></label>
+          </div>
+          <br>
+          <br>
+          <input type="email" required id="sahkoposti" placeholder="Syötä sähköpostisi" class="normal">
+          <p></p>
+          <input type="text" id="viesti" value="" placeholder="Syötä palaute" class="normal">
+          <p></p>
+
+          <input type="submit" value="Lähetä" class="normal"> 
+        </form>
+      </div>
+    </section>
+    <script src="js/order.js"></script>
+    <script src="js/ostoskori.js"></script>
+    <script src="js/main.js"></script>
+    <script src="./js/smooth-scroll.polyfills.min.js"></script>
+    <script defer>
+      var scroll = new SmoothScroll('a[href*="#"]');
+      var rsvpButton = document.getElementById('rsvpButton')
+      rsvpButton.addEventListener('click',hideButton,false);
+
+      function hideButton() {
+        rsvpButton.style.display = 'none';
+      }   
+    </script>
+  </body>
+</html>
