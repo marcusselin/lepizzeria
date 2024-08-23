@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>LePizzeria</title>
+    <link rel="stylesheet" type="text/css" href="css_main/theme.css"> 
+    <link rel="stylesheet" type="text/css" href="./icons/css/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="row">
+      <div class="leftCorner">
+      </div>
+      
+      <div class="topbar"> </div>
+      <div class="topbarline"> </div>
+
+      <!-- KOTI NAPPI--> 
+      <a href="index.html">
+        <img src="img/LePizzeriaJPG_2.jpg" class="HomeButton"> 
+      </a>
+
+      <!-- MENU NAPPI-->
+      <a href="menu.html">
+        <p class="MenuButton">MENU</p> 
+      </a>
+
+      <!-- LUO OMA PIZZASI NAPPI-->
+      <a href="create_pizza.html">
+        <p class="CreateButton">LUO OMA PIZZASI</p> 
+      </a>
+
+      <!--OSTOSKORI-->
+        <div>
+          <p id="amount_text" class="CartNum" style="color: white;"></p>
+          <a href="ostoskori.html">
+            <img src="img/Cart.png" class="CartButton">
+          </a>
+        </div>
+
+      <!--KIRJAUTUMINEN-->
+      <div id="logged_in_page" class="row_right">
+        <p id="username-text">null</p>
+        <p id="log-out-button" onClick='HandleEvent("log_out")'>Kirjaudu ulos</p>
+      </div>
+      
+      <div id="log_in_link" class="row_right">
+        <p style="background-color: #020122;"></p>     
+        <a href="log_in.html">
+          <img src="img/user-account-icon.jpg" width="182" height="50">
+        </a>
+      </div>
+    </div>
+    
+    <div class="headbox"> </div>
+    <header class="header">
+      <h1 class="heading">
+        LePizzeria
+        <i class="heading-subtext"> A slice of life</i>
+      </h1>
+    </header> 
+
+    <section class="image-text-section">
+      <div class="image-container">
+        <img style="border-radius: 30px;" src="img/margherita.jpg" width="auto" height="auto">
+      </div>
+      <div class="text-container">
+        <h1></h1>
+        <h1 style="color: white;" class="big">Päivän pizza!</h1>
+        <p style="width: 450px; font-size: 20px; text-align: center; color: white;"> LePizzerian maukas Margherita pizza tarjoaa herkullisen yhdistelmän perinteistä italialaista makua. Valmistettu tuoreista ja laadukkaista raaka-aineista, tämä klassinen pizza hurmaa makunystyräsi. Mehevän tomaattikastikkeen, tuoreen mozzarellan ja basilikan yhdistelmä sulaa suussa ja vie sinut matkalle Italiaan. Tule ja nauti tästä ikonisesta herkusta LePizzeriassa tänään! </p>
+      </div>
+    </section>
+    <section style="background-color: #874631">
+      <section class="image-text-section2">
+        <div class="text-container">
+          <h1></h1>
+          <h1 style="color:white;" class="big">Suosituin pizza!</h1>
+          <p style="width: 500px; font-size: 20px; text-align: center; color:white;"> Alla Diavola -pizza on suosittu valinta LePizzeriassa sen ainutlaatuisen makuprofiilin ansiosta. Yhdistelmä tulisia jalapenoja ja mausteisia pepperoneja tarjoaa unohtumattoman makuelämyksen, houkutellen niitä, jotka haluavat kokea uusia ja rohkeita makuja. Lisäksi sulava juusto täydentää tämän herkullisen yhdistelmän, mikä tekee Alla Diavola -pizzasta pakollisen valinnan niille, jotka etsivät makujen voimaa ja unohtumatonta ruokakokemusta.
+          </p>
+        </div>
+        <div class="image-container">
+          <img style="border-radius: 30px;" src="img/diavola.jpg" width="auto" height="auto">
+        </div>
+      </section>
+      
+
+      <section class="image-text-section2">
+        <div class="image-container" style="background-color: #874631;">
+          <img style="border-radius: 30px;" src="img/Gangshit.jpg" width="910" height="500">
+        </div>
+        <div class="text-container" style="background-color:#874631;">
+          <h1></h1>
+          <h1 style="padding-left:120px;" class="big">Meistä!</h1>
+
+          <p style="width: 500px; font-size: 20px; text-align: center;"> 
+            LePizzeria on pizzeria, joka tarjoaa laajan valikoiman herkullisia pizzoja asiakkailleen. Meidän ainutlaatuisuutemme on mahdollisuus tehdä oma pizza valitsemalla haluamasi täytteet valikoimastamme. Panostamme laatuun ja tuoreuteen jokaisessa annoksessa, ja pyrimme tarjoamaan asiakkaillemme unohtumattoman ruokaelämyksen. Tervetuloa nauttimaan herkullisista pizzoista LePizzeriaan!
+          </p>
+        </div>
+        
+      </section>
+      <section class="feedback-section">
+        <div class="text-container1">
+          <br>
+          <br>
+          <br>
+          <p style="color:white"> Sähköpostiosoite: lepizzeria@gmail.com</p> 
+          <p style="color:white"> Puh. +358 1234 567 890</p> 
+          <p style="color:white"> © Copyright LePizzeria oy</p> 
+        </div>
+        <div class="text-container2">
+          <h1></h1>
+          <h1 class="normal-text" style="color:white" >Palaute</h1>
+          <form class="feedback" onsubmit="sendfeedback()">
+            <div class="rating">
+              <input type="radio" id="1" name="rating" value="1" onchange="handleRatingChange(1)" checked>
+              <label for="1" title="1 star"></label>
+              &nbsp;
+              &nbsp;
+              <input type="radio" id="2" name="rating" value="2" onchange="handleRatingChange(2)">
+              <label for="2" title="2 star"></label>
+              &nbsp;
+              &nbsp;
+              <input type="radio" id="3" name="rating" value="3" onchange="handleRatingChange(3)">
+              <label for="3" title="3 star"></label>
+              &nbsp;
+              &nbsp;
+              <input type="radio" id="4" name="rating" value="4" onchange="handleRatingChange(4)">
+              <label for="4" title="4 star"></label>
+              &nbsp;
+              &nbsp;
+              <input type="radio" id="5" name="rating" value="5" onchange="handleRatingChange(5)">
+              <label for="5" title="5 star"></label>
+            </div>
+            <br>
+            <br>
+            <br>
+            <input type="email" required id="sahkoposti" placeholder="Syötä sähköpostisi">
+            <br>
+            <br>
+            <input type="text" id="viesti" value="" placeholder="Syötä palaute">
+            <br>
+            
+            <br>
+            <br>
+            <input type="submit" style="border-radius: 20px;" value="Lähetä" > 
+          </form>
+        </div>
+      </section>
+    <script src="js/main.js"></script>
+    <script src="./js/smooth-scroll.polyfills.min.js"></script>
+    <script defer>
+      var scroll = new SmoothScroll('a[href*="#"]');
+      var rsvpButton = document.getElementById('rsvpButton')
+      rsvpButton.addEventListener('click',hideButton,false);
+
+      function hideButton() {
+        rsvpButton.style.display = 'none';
+      }   
+    </script>
+  </body>
+</html>
